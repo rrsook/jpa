@@ -23,7 +23,6 @@ public class PcRoom {
 
 
         PcRoom pcRoom = new PcRoom();
-        int customerId = 0;
 
         try {
             tx.begin();
@@ -32,7 +31,7 @@ public class PcRoom {
             // get customers
             List<Customer> customers = em.createQuery("select c from Customer c", Customer.class).getResultList();
 
-            customerId = customers.get(0).getId();
+            int customerId = customers.get(0).getId();
 
             try {
                 pcRoom.checkin(customerId);
