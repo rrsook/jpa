@@ -12,9 +12,13 @@ public class CheckIn {
     @Id
     private int id;
 
-    private int customerId;
+    @ManyToOne
+    @JoinColumn(name = "CUSTOMER_ID")
+    private Customer customer;
 
-    private int equipmentId;
+    @ManyToOne
+    @JoinColumn(name = "EQUIPMENT_ID")
+    private Equipment equipment;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date startTime;
@@ -36,20 +40,20 @@ public class CheckIn {
         this.id = id;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getEquipmentId() {
-        return equipmentId;
+    public Equipment getEquipment() {
+        return equipment;
     }
 
-    public void setEquipmentId(int equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     public Date getStartTime() {

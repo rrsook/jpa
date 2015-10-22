@@ -26,7 +26,8 @@ class Customer {
 
     private String phoneNo;
 
-    private List<CheckIn> checkInList = new ArrayList<CheckIn>();
+//    @OneToMany(mappedBy = "customer")
+//    private List<CheckIn> checkInList = new ArrayList<CheckIn>();
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date registTime;
